@@ -40,8 +40,8 @@ public class ejercicio10App {
 		// creamos un loop para rellenar el Array
 		for (int i = 0; i < arreglo.length; i++) {
 
-			int numerosRandom = (int) (numMinimo + (Math.random() * numMaximo)); // creamos nueros random con el rango
-																					// solicitado anteriormente
+			// creamos nueros random con el rango solicitado anteriormente
+			int numerosRandom = (int) (numMinimo + (Math.random() * numMaximo)); 
 			int aux = numerosRandom;
 
 			funcionPrimos(arreglo, numerosRandom, aux);
@@ -57,16 +57,22 @@ public class ejercicio10App {
 
 	// creamos una funcion para revisar si los numeros generados Random, son primos
 	// y pueden ingresar al array
-	public static int funcionPrimos(int[] arreglo, int numerosRandom, int aux) {// traemos como parametros al arreglo,
-																				// la variable "numeros random" y un
-																				// auxiliar)
+	// traemos como parametros al arreglo,
+	// la variable "numeros random" y un
+	// auxiliar)
+	public static int funcionPrimos(int[] arreglo, int numerosRandom, int aux) {
 
 		// para comprobar si un numero es random usaremos un if:
 		if (aux > 0) { // primero, nos aseguramos de que el numero sea mayor que 0
-			if (numerosRandom % aux == 0) // si el resto del numero random entre el auxiliar es igual a 0
-				return 1 + funcionPrimos(arreglo, numerosRandom, aux - 1);// volvemos a invocar esta funcion, sumando 1
-																			// a toda la funcion y restando 1 al
-																			// auxiliar dando 2 como resultado
+			
+			// si el resto del numero random entre el auxiliar es igual a 0
+			if (numerosRandom % aux == 0) 
+				
+				//volvemos a invocar esta funcion, sumando 1
+				// a toda la funcion y restando 1 al
+				// auxiliar dando 2 como resultado
+				return 1 + funcionPrimos(arreglo, numerosRandom, aux - 1);
+																			
 
 			// si no es el caso se retorna la funcion con num2-1 dando como resultado 2
 			return funcionPrimos(arreglo, numerosRandom, aux - 1);
@@ -105,9 +111,12 @@ public class ejercicio10App {
 									// hasta que se han comparado todos los valores
 			}
 		}
-		System.out.println();// imprimimos un espacio separador
-		System.out.println("El numero Primo mayor es: " + mayor);// finalmente imprimimos al numero mayor, guardado en
-																	// la variable "mayor"
+		
+		// imprimimos un espacio separador
+		System.out.println();
+		
+		//finalmente imprimimos al numero mayor, guardado en la variable "mayor"
+		System.out.println("El numero Primo mayor es: " + mayor);
 	}
 
 }
