@@ -8,31 +8,34 @@ public class ejercicio3App {
 		String numeroString = JOptionPane.showInputDialog("Dime un numero");
 
 		// convertimos el valor en un numero entero
-		int numero = Integer.parseInt(numeroString);
-
-		int otronumero = numero;
+		int num1 = Integer.parseInt(numeroString);
 		
-				
-		funcionPrimos(numero,otronumero);
+		int num2 = num1;
 		
-		if(funcionPrimos(numero, otronumero) == 2)
-			
-            System.out.println("Es primo");
+		//llamamos a la funcion "funcionPrimos"		
+		funcionPrimos(num1,num2);
+		
+		//si la funcion da 2 se trata de un numero primo, se imprime por pantalla
+		if(funcionPrimos(num1, num2) == 2)
+            System.out.println("El numero seleccionado es primo");
+		
+		//si no da 2, se imprimie por terminal que el numero no es primo
         else
-        	
-            System.out.println("No es primo");
+            System.out.println("El numero seleccionado no es primo");
 
 	}
 
-	// creamos el metodo aleatorio
-	
-	public static int funcionPrimos(int numPrimo, int aux) {
+	//creamos una funcion para determinar si es primo el numero 
+	public static int funcionPrimos(int num1, int num2) {
 
-	    if (aux > 0) {
-	        if(numPrimo % aux == 0)
-	            return 1+funcionPrimos(numPrimo, aux-1);
-	        return funcionPrimos(numPrimo, aux-1);
-
+	    if (num2 > 0) { //primero aseguramos que num2 se trate de un numero igual o superior a 0
+	        if(num1 % num2 == 0) //en ese caso si el resto de num1 entre num2 da 0, se trata de un numero primo 
+	            return 1+funcionPrimos(num1, num2-1); //se retorna la funcion +1 y num2-1 dando como resultado 2
+	        
+	        //si no es el caso se retorna la funcion  con num2-1 dando como resultado 2
+	        return funcionPrimos(num1, num2-1);
+	     
+	    // si no se cumplen esas condiciones  retorna 0
 	    }else {
 	        return 0;
 	    }
